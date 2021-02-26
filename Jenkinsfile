@@ -3,7 +3,7 @@ pipeline {
   agent any
 
   environment {
-    registry = "docker.io/treaty/SimpleMavenApp"
+    registry = "docker.io/treaty/simplemavenapp"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
