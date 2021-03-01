@@ -57,22 +57,10 @@ stages {
       stage('Deploy Image') {
           steps{
              script {
-                docker.withRegistry( '', registryCredential ) {
-                dockerImage.push()
-             }
+                dockerImage.run()
            }
          }
        }
-
-
-   stage('Remove Unused docker image') {
-      steps{
-          script {
-            sh "docker rmi -f $registry:$BUILD_NUMBER"
-        }
-      }
-    }
-        
 
   }
 }
